@@ -9,7 +9,7 @@ import java.util.concurrent.Delayed;
 import java.util.concurrent.TimeUnit;
 
 
-@SuppressWarnings({"WeakerAcess", "unused", "UnusedReturnValue"})
+@SuppressWarnings({"WeakerAccess", "unused", "UnusedReturnValue"})
 public class Task<V> implements Runnable, Delayed {
 
     private static Map<TimeUnit, ChronoUnit> UNITS = new HashMap<>() {
