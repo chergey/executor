@@ -12,7 +12,6 @@ public class Executor {
     private DelayQueue<Task<?>> tasks = new DelayQueue<>();
 
 
-
     public Executor() {
         Thread dispenser = new Thread(() -> {
             while (!stopped.get()) {
@@ -20,7 +19,13 @@ public class Executor {
                 while ((task = tasks.poll()) != null) {
                     task.run();
                 }
+                try {
+                    Thread.sleep(10);
+                } catch (InterruptedException e) {
+                    stopped.set(true);
+                }
             }
+
 
         });
         dispenser.start();

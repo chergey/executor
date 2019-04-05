@@ -58,7 +58,7 @@ public class Task<V> implements Runnable, Delayed {
 
     @Override
     public int compareTo(Delayed o) {
-        int res = Long.compare(this.getDelay(DEFAULT_UNIT), o.getDelay(DEFAULT_UNIT));
+        int res = Long.compare(getDelay(DEFAULT_UNIT), o.getDelay(DEFAULT_UNIT));
         if (res == 0 && o instanceof Task) {
             Task o1 = (Task) o;
             return submissionTime.compareTo(o1.submissionTime);
