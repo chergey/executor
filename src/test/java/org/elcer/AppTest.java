@@ -8,9 +8,6 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 
-/**
- * Unit test for simple App.
- */
 public class AppTest {
 
 
