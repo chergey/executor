@@ -8,6 +8,8 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.Delayed;
 import java.util.concurrent.TimeUnit;
 
+
+@SuppressWarnings({"WeakerAcess", "unused", "UnusedReturnValue"})
 public class Task<V> implements Runnable, Delayed {
 
     private static Map<TimeUnit, ChronoUnit> UNITS = new HashMap<>() {
@@ -30,7 +32,7 @@ public class Task<V> implements Runnable, Delayed {
 
     private volatile V result;
 
-    Task(Callable<V> action, LocalDateTime executionTime) {
+    public Task(Callable<V> action, LocalDateTime executionTime) {
         this.action = action;
         this.executionTime = executionTime;
     }
